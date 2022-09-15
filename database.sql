@@ -2,7 +2,7 @@
 
 -- set up a database named 'shoppingList'
 -- run this SQL command to set up the table.
-CREATE TABLE "shoppingList" 
+CREATE TABLE shoppingList
 	(
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR(80) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE "shoppingList"
     );
     
 -- test data
-INSERT INTO "shoppingList" (name, quantity, units)
+INSERT INTO shoppingList (name, quantity, units)
 	VALUES
 		('Grapes', '2', 'lbs'),
 		('Poptarts', '1', 'box'),
