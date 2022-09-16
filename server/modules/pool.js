@@ -14,11 +14,11 @@ const pool = new Pool({
 
 // Listener setup on the pool isn't required, 
 // but can be super handy for troubleshooting.
-pool.on('connect', () => {
+pool.on('connect', (client) => {
     console.log('Connected to the database');
 });
 
-pool.on('error', (error) => {
+pool.on('error', (error, client) => {
     console.log('Error with database pool', error);
 });
 
