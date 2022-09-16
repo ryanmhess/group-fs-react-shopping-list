@@ -18,9 +18,10 @@ function Items({ item, fetchItem }) {
         <li>{item.name}</li>
         <li>{item.quantity}</li>
         <li>{item.units}</li>
-        <>{item.purchased === true ? "Purchased" : <button onClick={buyItem}>Buy</button>}</>
+        {item.purchased === true ? "Purchased" : <button onClick={buyItem}>Buy</button>}
     </>
     )
+    
 }
 
 export default Items;
