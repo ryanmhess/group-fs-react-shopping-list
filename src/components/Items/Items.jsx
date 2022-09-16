@@ -15,7 +15,7 @@ function Items({ item, fetchItem }) {
     }
     console.log('item purchased:', item.purchased);
     
-     const removeItem = () => {
+    const removeItem = () => {
         axios({
             method: 'DELETE',
             url: '/shopping/${item.id}'
@@ -33,10 +33,8 @@ function Items({ item, fetchItem }) {
         <li>{item.name}</li>
         <li>{item.quantity}</li>
         <li>{item.units}</li>
-        <button onClick={removeItem}>Remove</button>
-    </ul>
-
         {item.purchased === true ? "Purchased" : <button onClick={buyItem}>Buy</button>}
+        {item.purchased === true ? "" : <button onClick={removeItem}>Remove</button>}
     </>
     )
     
