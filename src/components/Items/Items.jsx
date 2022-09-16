@@ -31,8 +31,7 @@ function Items({ item, fetchItem }) {
     return (
     <>
         <li>{item.name}</li>
-        <li>{item.quantity}</li>
-        <li>{item.units}</li>
+        <li>{item.quantity} {item.units}</li>
         {item.purchased === true ? "Purchased" : <button onClick={buyItem}>Buy</button>}
         {item.purchased === true ? "" : <button onClick={removeItem}>Remove</button>}
     </>
