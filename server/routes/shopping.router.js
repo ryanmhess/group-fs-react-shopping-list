@@ -37,6 +37,27 @@ router.post('/', (req, res) => {
 
 //  DELETE
 
+router.delete('/:id', (req, res) => {
+    console.log(`Deleting Item, ID ${req.params.id}`);
+    
+    let deleteID = [req.params.id];
+    
+    const sqlText = `
+        DELETE from shoppingList
+        WHERE "id"=$1;
+        `
+    
+        pool.query(sqlText, deleteID)
+.then((result) => {
+    res.sendStatus(200);
+})
+.catch((error) => {
+    console.log(`Error Deleting Item`, error)
+    res.sendStatus(500);
+});
+});
+
+
 //  PUT
 
 // UPDATE
