@@ -11,9 +11,8 @@ function AddItem({fetchItem}) {
     }
 
     function emptyInputs() {
-        setNewItem({name:''})
-        setNewItem({quantity:''})
-        setNewItem({units: ''})
+        setNewItem({name:'', quantity:'', units:''})
+        
     }
     const addNewItem = (item) => {
         console.log(`newItem in newItem: ${item}`)
