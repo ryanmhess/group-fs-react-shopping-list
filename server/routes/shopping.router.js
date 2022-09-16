@@ -19,6 +19,21 @@ router.get('/', (req,res) => {
 });
 
 //  POST
+router.post('/', (req, res) => {
+    console.log('data in SS POST:', req.body)
+    const sqlText = `
+    INSERT INTO shoppingList (name, quantity, units)
+	VALUES ($1, $2, $3)
+    `
+    const sqlVal = [req.body.name, req.body.quantity, req.body.units]
+    pool.query(sqlText, sqlVal)
+        .then((result) => {
+            res.sendStatus(201)
+        }).catch((error) => {
+            console.log('Error in SS POST', error)
+            res.sendStatus(500)
+        })
+})
 
 //  DELETE
 
