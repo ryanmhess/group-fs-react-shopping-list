@@ -3,9 +3,9 @@ import axios from 'axios';
 import './App.css';
 import Header from '../Header/Header.jsx';
 import ListItem from '../ListItem/ListItem.jsx';
-// import AddItem from '../AddItem/AddItem.jsx';
+import AddItem from '../AddItem/AddItem.jsx';
 // import RemoveItem from '../RemoveItem/RemoveItem.jsx';
-// import UpdateItem from '../UpdateItem/UpdateItem.jsx';
+
 
 
 
@@ -36,11 +36,12 @@ function App() {
             <main>
                 <p>Under Construction...</p>
 
-                {/* <AddItem /> */}
+                <AddItem fetchItem={fetchItem}/> 
 
-                <ListItem shoppingList={shoppingList}/>
-
-                {/* <UpdateItem /> */}
+                <ListItem 
+                    shoppingList={shoppingList}
+                    fetchItem={fetchItem}
+                />
 
                 {/* <RemoveItem /> */}
 
