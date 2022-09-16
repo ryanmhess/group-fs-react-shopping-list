@@ -18,9 +18,10 @@ function Items({ item, fetchItem }) {
     const removeItem = () => {
         axios({
             method: 'DELETE',
-            url: '/shopping/${item.id}'
+            url: `/shopping/${item.id}`
         })
         .then((delRes) => {
+            fetchItem();
             console.log('ID Deleted', delRes);
         })
         .catch ((delErr) => {
