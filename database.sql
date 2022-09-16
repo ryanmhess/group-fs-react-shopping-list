@@ -1,5 +1,3 @@
---DROP TABLE "shoppingList";
-
 -- set up a database named 'shoppingList'
 -- run this SQL command to set up the table.
 CREATE TABLE shoppingList
@@ -12,11 +10,9 @@ CREATE TABLE shoppingList
     );
     
 -- test data
-INSERT INTO shoppingList (name, quantity, units)
+INSERT INTO shoppingList (name, quantity, units, purchased)
 	VALUES
-		('Grapes', '2', 'lbs'),
-		('Poptarts', '1', 'box'),
-		('Sunkist', '1', '12 pk'),
-		('Ground Beef', '2.5', 'per lb');
-		
-		
+		('Grapes', '2', 'lbs', FALSE),
+		('Poptarts', '1', 'box', FALSE),
+		('Sunkist', '1', '12 pk', FALSE),
+		('Ground Beef', '2.5', 'per lb',FALSE);

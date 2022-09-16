@@ -24,4 +24,22 @@ router.get('/', (req,res) => {
 
 //  PUT
 
+// UPDATE
+router.put('/:id', (req, res) => {
+    const sqlText = `
+    UPDATE shoppingList
+        SET purchased = TRUE
+        WHERE id = $1;
+    `
+    const sqlValues = [req.params.id];
+    pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+        res.sendStatus(200);
+    })
+    .catch((dbErr) => {
+        console.log('SQL failed in PUT /dentists/:id', dbErr);
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;
